@@ -53,7 +53,7 @@ namespace API.Controllers
             var user = await _context.Users
                 .SingleOrDefaultAsync(user => user.UserName == loginUser.UserName.ToLower());
 
-            if (user == null) return Unauthorized("No existe un usuario con el nombre proporcionado.");
+            if (user == null) return Unauthorized("No existe un usuario registrado con ese nombre");
 
             using var hmac = new HMACSHA512(user.PasswordSalt);
 
