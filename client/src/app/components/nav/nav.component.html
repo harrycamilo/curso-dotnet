@@ -6,8 +6,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ng-container *ngIf="accountService.currentUser$ | async">
-        <ul class="navbar-nav mb-2 mb-md-0">
+      <ul class="navbar-nav mb-2 mb-md-0">
+        <ng-container *ngIf="accountService.currentUser$ | async">
           <li class="nav-item">
             <a class="nav-link" routerLink="/members" routerLinkActive="acitve">Matches</a>
           </li>
@@ -17,8 +17,11 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/messages" routerLinkActive="acitve">Mensajes</a>
           </li>
-        </ul>
-      </ng-container>
+        </ng-container>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/errors" routerLinkActive="acitve">Errors</a>
+        </li>
+      </ul>
 
       <div *ngIf="(accountService.currentUser$ | async) as user" class="dropdown ml-auto" dropdown>
         <a class="dropdown-toggle text-light" dropdownToggle>

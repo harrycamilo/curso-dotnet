@@ -1,0 +1,23 @@
+<h4 class="text-center container px-5">
+  Error Interno del Servidor - Recargue la p&aacute;gina o Vuelva a intentar en unos segundos
+</h4>
+<ng-container *ngIf="error">
+  <h5 class="text-danger text-center">Error: {{error.message}}</h5>
+  <p class="font-weight-bold text-center mb-3">
+    Nota: Si est&aacute;s viendo esto, probablemente no sea un problema de Angular.
+  </p>
+  <p>Qu&eacute; hacer?</p>
+  <ol>
+    <li>Abra la consola de Chrome (F12)</li>
+    <li>Revise la pesta&ntilde;a de Red (Network)</li>
+    <li>Busque la request fallida</li>
+    <li>Examine la URL - aseg&uacute;rese de que es la correcta</li>
+    <li>Trate de reproducir el error en Postman - si recibe la misma respuesta, 
+      el problema efectivamente no es de Angular o la aplicaci&oacute;n cliente
+    </li>
+  </ol>
+  <p class="mt-5">A continuaci&oacute;n el stack trace del error - deber&iacute;a comenzar a investigar desde aqu&iacute;:</p>
+  <div style="background-color: whitesmoke;">
+    <code>{{error.details}}</code>
+  </div>
+</ng-container>
